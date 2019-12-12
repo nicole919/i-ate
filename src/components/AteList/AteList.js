@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import AteListItem from "../AteListItem/AteListItem";
 import ApiContext from "../../ApiContext";
 import config from "../../config";
@@ -38,7 +37,6 @@ export default class AteList extends Component {
     return (
       <div className="AteList">
         <h1 className="AteList_header">i.ate</h1>
-        <Link to="/NewAteItemForm">New entry</Link>
         <ul>
           {this.state.meals.map(meal => (
             <li key={meal.id}>

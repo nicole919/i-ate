@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import config from "../../config";
-//import { ConditionalWrapperDrink } from "../../ConditionalWrapper";
 import "./AteListItem.css";
 import moment from "moment";
 
@@ -20,6 +19,29 @@ export default class AteListItem extends Component {
       });
   }
 
+  renderDrink() {
+    if (!this.props.drink) {
+      return null;
+    } else {
+      return <div>I drank {this.props.drink}</div>;
+    }
+  }
+
+  renderCity() {
+    if (!this.props.city) {
+      return null;
+    } else {
+      return <div>in {this.props.city}</div>;
+    }
+  }
+  renderComments() {
+    if (!this.props.comments) {
+      return null;
+    } else {
+      return <p> Also, {this.props.comments}</p>;
+    }
+  }
+
   render() {
     return (
       <div className="AteListItem">
@@ -29,20 +51,19 @@ export default class AteListItem extends Component {
           )}
           I went to
           {this.props.restaurantName && <h2>{this.props.restaurantName}</h2>}I
-          ate {this.props.food && this.props.food},
-          {/* <div className="drink">
-            I drank {this.props.drink && this.props.drink}
-          </div>{" "} */}
-          in {this.props.city && this.props.city} and it was{" "}
+          ate {this.props.food && this.props.food},{this.renderDrink()}
+          {this.renderCity()} and it was{" "}
           {this.props.rating && this.props.rating}
-          <p> Also,{this.props.comments && this.props.comments}</p>
-          <button
-            className="Meal-delete"
-            type="button"
-            onClick={() => this.handleClickDelete(this.props.id)}
-          >
-            delete this nephew
-          </button>
+          {this.renderComments()}
+          <div>
+            <button
+              className="Meal-delete"
+              type="button"
+              onClick={() => this.handleClickDelete(this.props.id)}
+            >
+              delete
+            </button>
+          </div>
         </section>
       </div>
     );

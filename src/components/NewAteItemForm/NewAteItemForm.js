@@ -10,7 +10,7 @@ export default class NewItemAteForm extends Component {
     drink: "",
     date: "",
     city: "",
-    rating: "",
+    rating: "good.",
     comments: "",
     formValid: false,
     restaurantNameValid: false,
@@ -23,9 +23,6 @@ export default class NewItemAteForm extends Component {
   };
 
   updateFormEntry(event) {
-    const name = event.target.name;
-    const value = event.target.value;
-
     this.setState({
       [event.target.name]: event.target.value
     });
@@ -129,10 +126,10 @@ export default class NewItemAteForm extends Component {
               ></Input>
             </div>
             <div className="when">
-              <label htmlFor="NewAteItemForm_when">When(MM/DD/YYYY)</label>
+              <label htmlFor="NewAteItemForm_when">When</label>
               <Input
                 name="date"
-                type="text"
+                type="date"
                 id="date"
                 onChange={event => this.updateFormEntry(event)}
               ></Input>
@@ -166,19 +163,18 @@ export default class NewItemAteForm extends Component {
               ></Input>
             </div>
             <div>
-              <label htmlFor="NewAteItemForm_rating">It was</label>
+              <label htmlFor="rating">It was</label>
               <select
-                value={this.state.value}
-                type="text"
                 name="rating"
                 id="rating"
-                defaultValue="good"
                 onChange={event => this.updateFormEntry(event)}
               >
-                <option value="bad">not good</option>
-                <option value="okay">okay</option>
-                <option value="good">good</option>
-                <option value="best">amazing</option>
+                <option value="not good.">not good</option>
+                <option value="okay.">okay</option>
+                <option value="good." selected>
+                  good
+                </option>
+                <option value="the best!">the best</option>
               </select>
             </div>
             <div className="comments">
