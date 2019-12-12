@@ -1,9 +1,10 @@
 {
-  "homepage": "https://nicole919.github.io/i-ate",
+  "homepage": ".",
   "name": "i-ate",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "moment": "^2.24.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-router-dom": "^5.1.2",
@@ -11,9 +12,9 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "now --prod ./build",
     "start": "react-scripts start",
-    "prebuild": "react-scripts test",
+    "prebuild": "",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

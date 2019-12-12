@@ -3,9 +3,9 @@ import React from "react";
 export default React.createContext({
   ateList: [],
   toggle: false,
-  API: "http://localhost:9090",
+  API: "http://localhost:8000",
   addAteItem: () => {},
-  deleteAteItem: () => {},
+  deleteMeal: () => {},
   toggleErrors: () => {},
   throwError: () => {}
 });

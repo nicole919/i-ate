@@ -28,8 +28,9 @@ export default class HomePage extends Component {
 
         <section>
           <h3>So, where did you eat?</h3>
-          <Link to="/registrationform">Sign up</Link>| |
-          <Link to="/loginform">Login</Link>
+          <p>i.ate is currently in beta mode</p>
+          <Link to="/NewAteItemForm">Create an Entry</Link>| |
+          <Link to="/AteList">View entries</Link>
         </section>
       </div>
     );
