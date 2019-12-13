@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import AteListItem from "../AteListItem/AteListItem";
 import ApiContext from "../../ApiContext";
 import config from "../../config";
-import SearchBar from "../SearchBar";
+import SearchBar from "../SearchBar/SearchBar";
 import "./AteList.css";
 
 export default class AteList extends Component {
@@ -34,9 +34,15 @@ export default class AteList extends Component {
     const newMeals = this.state.meals.filter(meal => {
       return meal.id !== mealId;
     });
-    this.setState({ meals: newMeals });
+    this.setState({ meals: newMeals }, () => {
+      this.filterMeals("");
+    });
   };
   onSearchChange = searchQuery => {
+    this.filterMeals(searchQuery);
+  };
+
+  filterMeals = searchQuery => {
     const newMeals = this.state.meals.filter(meal => {
       const mealString = JSON.stringify(meal)
         .trim()
@@ -45,13 +51,17 @@ export default class AteList extends Component {
     });
     this.setState({ filteredMeals: newMeals });
   };
+
   render() {
     return (
       <div className="AteList">
-        <SearchBar onChange={this.onSearchChange} />
+        <div className="AteListBanner">
+          <h1 className="AteListHeader">entries</h1>
+          <SearchBar onChange={this.onSearchChange} />
+        </div>
         <ul>
           {this.state.filteredMeals.map(meal => (
-            <li key={meal.id}>
+            <li className="listItemContainer" key={meal.id}>
               <AteListItem
                 id={meal.id}
                 restaurantName={meal.restaurant_name}

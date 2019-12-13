@@ -1,6 +1,4 @@
----
-permalink: /index.html
----
+url("https://static.tumblr.com/92f8d57ff20a3f6838a5624f01088e20/whfv9mu/49Npr3z6z/tumblr_static_qibkklp5z74sgsgwcocokc4k.gif");
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

@@ -109,89 +109,98 @@ export default class NewItemAteForm extends Component {
   }
   render() {
     return (
-      <div>
-        <form
-          className="NewAteItemForm"
-          onSubmit={event => this.handleSubmit(event)}
-        >
-          <div className="text">
-            <div className="name">
-              <label htmlFor="NewAteItemForm_where">Where {/*required*/}</label>
-              <Input
-                name="restaurantName"
-                type="text"
-                required
-                id="restaurantName"
-                onChange={event => this.updateFormEntry(event)}
-              ></Input>
+      <>
+        <h1 className="NewAteItemFormHeader">new entry</h1>
+        <div className="FormContainer">
+          <form
+            className="NewAteItemForm"
+            onSubmit={event => this.handleSubmit(event)}
+          >
+            <div className="text">
+              <div className="name">
+                <Input
+                  className="input"
+                  name="restaurantName"
+                  type="text"
+                  required
+                  id="restaurantName"
+                  placeholder="where"
+                  onChange={event => this.updateFormEntry(event)}
+                ></Input>
+              </div>
+              <div className="when">
+                <Input
+                  className="input"
+                  name="date"
+                  type="date"
+                  id="date"
+                  onChange={event => this.updateFormEntry(event)}
+                ></Input>
+              </div>
+              <div className="food">
+                <Input
+                  className="input"
+                  name="food"
+                  type="text"
+                  id="food"
+                  placeholder="what did you eat?"
+                  required
+                  onChange={event => this.updateFormEntry(event)}
+                ></Input>
+              </div>
+              <div className="drink">
+                <Input
+                  className="input"
+                  name="drink"
+                  type="text"
+                  id="drink"
+                  placeholder="what did you drink?"
+                  onChange={event => this.updateFormEntry(event)}
+                ></Input>
+              </div>
+              <div className="drink">
+                <Input
+                  className="input"
+                  name="city"
+                  type="text"
+                  id="city"
+                  placeholder="where were you? (city)"
+                  onChange={event => this.updateFormEntry(event)}
+                ></Input>
+              </div>
+              <div>
+                <select
+                  className="input"
+                  name="rating"
+                  id="rating"
+                  onChange={event => this.updateFormEntry(event)}
+                >
+                  <option value="not good.">it was not good</option>
+                  <option value="okay.">it was okay</option>
+                  <option value="good." selected>
+                    it was good!
+                  </option>
+                  <option value="the best!">the best!</option>
+                </select>
+              </div>
+              <div className="comments">
+                <Textarea
+                  className="input"
+                  name="comments"
+                  type="text"
+                  id="comments"
+                  placeholder="additional thoughts"
+                  onChange={event => this.updateFormEntry(event)}
+                ></Textarea>
+              </div>
+              <button type="submit" className="button">
+                Save
+              </button>
             </div>
-            <div className="when">
-              <label htmlFor="NewAteItemForm_when">When</label>
-              <Input
-                name="date"
-                type="date"
-                id="date"
-                onChange={event => this.updateFormEntry(event)}
-              ></Input>
-            </div>
-            <div className="food">
-              <label htmlFor="NewAteItemForm_food">I ate</label>
-              <Input
-                name="food"
-                type="text"
-                id="food"
-                required
-                onChange={event => this.updateFormEntry(event)}
-              ></Input>
-            </div>
-            <div className="drink">
-              <label htmlFor="NewAteItemForm_drink">I drank</label>
-              <Input
-                name="drink"
-                type="text"
-                id="drink"
-                onChange={event => this.updateFormEntry(event)}
-              ></Input>
-            </div>
-            <div className="drink">
-              <label htmlFor="NewAteItemForm_city">I was in (city)</label>
-              <Input
-                name="city"
-                type="text"
-                id="city"
-                onChange={event => this.updateFormEntry(event)}
-              ></Input>
-            </div>
-            <div>
-              <label htmlFor="rating">It was</label>
-              <select
-                name="rating"
-                id="rating"
-                onChange={event => this.updateFormEntry(event)}
-              >
-                <option value="not good.">not good</option>
-                <option value="okay.">okay</option>
-                <option value="good." selected>
-                  good
-                </option>
-                <option value="the best!">the best</option>
-              </select>
-            </div>
-            <div className="comments">
-              <label htmlFor="NewAteItemForm_comments">Additional notes</label>
-              <Textarea
-                name="comments"
-                type="text"
-                id="comments"
-                onChange={event => this.updateFormEntry(event)}
-              ></Textarea>
-            </div>
-            <button type="submit" className="button">
-              Save
-            </button>
-          </div>
-        </form>
-      </div>
+          </form>
+          <footer></footer>
+        </div>
+      </>
     );
   }
 }

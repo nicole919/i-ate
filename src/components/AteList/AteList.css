@@ -1,8 +1,72 @@
 .AteList {
-  padding-top: 200px;
+  padding-top: 50px;
 }
 .AteList ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin-top: 25px auto;
+}
+
+.AteListHeader {
+  font-size: 55px;
+  font-family: "Happy Monkey", sans-serif;
+}
+
+.listItemContainer {
+  border-radius: 5px;
+  background-color: #dab4c9;
+  width: 80%;
+  margin-top: 5px;
+  padding: 3%;
+  font-family: "Happy Monkey";
+}
+
+.listItemContainer:nth-child(odd) {
+  background-color: #afd0ff;
+}
+
+button {
+  background-color: #fccdd9;
+  font-family: Montserrat, sans-serif;
+  color: #111;
+  width: 90px;
+  font-weight: bolder;
+  padding: 13px 9px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 2%;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 16px;
+  box-shadow: 0px 6px 0px #eda6bb;
+}
+
+button:hover {
+  background-color: #fcd7d2;
+  box-shadow: 0px 6px 0px #eea094;
+}
+
+button:active {
+  transform: translate3d(-2px, -2px, 0);
+  transition: all 100ms ease;
+  outline: none;
+  box-shadow: 0px 5px 0px #eea094;
+}
+
+button:focus {
+  outline: none;
+}
+
+@media (min-width: 1281px) {
+  .listItemContainer {
+    min-height: 100px;
+    width: 60%;
+    padding: 6% 0;
+    font-size: 18px;
+  }
 }
