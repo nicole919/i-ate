@@ -1,3 +1,3 @@
 export default {
-  API_ENDPOINT: "http://localhost9090"
+  API_ENDPOINT: "https://whispering-waters-19074.herokuapp.com/api"
 };

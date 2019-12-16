@@ -2,75 +2,7 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: "Open Sans", sans-serif;
-  font-size: 20px;
-  color: #444;
-  line-height: 1.5;
-  min-width: 320px;
-}
-
-.AteListItem_header {
-  padding-top: 100px;
-}
-header {
-  padding: 45px 15px;
+.AteList {
+  width: 100vw;
   text-align: center;
-}
-
-section {
-  min-height: 200px;
-  padding: 30px 15px;
-  background-color: #bbb;
-}
-
-section:nth-child(even) {
-  background-color: #ddd;
-}
-
-p {
-  margin: 0 auto;
-  max-width: 650px;
-}
-
-p + p {
-  margin-top: 15px;
-}
-
-form {
-  text-align: left;
-}
-
-input,
-textarea {
-  width: 100%;
-  max-width: 500px;
-}
-
-label {
-  display: block;
-}
-
-.form-section {
-  margin-bottom: 30px;
-}
-
-.record-entry {
-  min-height: 0;
-}
-
-.record-entry header {
-  padding: 0;
-}
-
-.record-entry header h3 {
-  margin: 0;
-}
-
-input[type="number"] {
-  width: 50px;
-}
-
-.radio-button {
-  left: auto;
 }
