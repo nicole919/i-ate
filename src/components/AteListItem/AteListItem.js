@@ -23,7 +23,7 @@ export default class AteListItem extends Component {
     if (!this.props.drink) {
       return null;
     } else {
-      return <div>I drank {this.props.drink}</div>;
+      return <span>I drank {this.props.drink}</span>;
     }
   }
 
@@ -31,7 +31,7 @@ export default class AteListItem extends Component {
     if (!this.props.city) {
       return null;
     } else {
-      return <div>in {this.props.city}</div>;
+      return <span>in {this.props.city}</span>;
     }
   }
   renderComments() {
@@ -47,11 +47,11 @@ export default class AteListItem extends Component {
       <div className="AteListItem">
         <section className="meal">
           {this.props.date && (
-            <p>{moment(this.props.date).format("MMMM Do, YYYY")}</p>
+            <p>{moment.utc(this.props.date).format("MMMM Do, YYYY")}</p>
           )}
           I went to
           {this.props.restaurantName && <h2>{this.props.restaurantName}</h2>}I
-          ate {this.props.food && this.props.food},{this.renderDrink()}
+          ate {this.props.food && this.props.food}, {this.renderDrink()}
           {this.renderCity()} and it was{" "}
           {this.props.rating && this.props.rating}
           {this.renderComments()}
@@ -65,6 +65,7 @@ export default class AteListItem extends Component {
             </button>
           </div>
         </section>
+        <footer></footer>
       </div>
     );
   }

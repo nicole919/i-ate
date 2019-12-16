@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import AteListItem from "../AteListItem/AteListItem";
 import ApiContext from "../../ApiContext";
+import Loader from "react-loader";
 import config from "../../config";
-import SearchBar from "../SearchBar";
+import SearchBar from "../SearchBar/SearchBar";
 import "./AteList.css";
 
 export default class AteList extends Component {
@@ -10,7 +11,8 @@ export default class AteList extends Component {
     super(props);
     this.state = {
       meals: [],
-      filteredMeals: []
+      filteredMeals: [],
+      loaded: false
     };
   }
   static defaultProps = {
@@ -23,7 +25,7 @@ export default class AteList extends Component {
     fetch(`${config.API_ENDPOINT}/meals`)
       .then(res => res.json())
       .then(meals => {
-        this.setState({ meals, filteredMeals: meals });
+        this.setState({ meals, filteredMeals: meals, loaded: true });
       })
       .catch(error => {
         console.error({ error });
@@ -34,9 +36,15 @@ export default class AteList extends Component {
     const newMeals = this.state.meals.filter(meal => {
       return meal.id !== mealId;
     });
-    this.setState({ meals: newMeals });
+    this.setState({ meals: newMeals }, () => {
+      this.filterMeals("");
+    });
   };
   onSearchChange = searchQuery => {
+    this.filterMeals(searchQuery);
+  };
+
+  filterMeals = searchQuery => {
     const newMeals = this.state.meals.filter(meal => {
       const mealString = JSON.stringify(meal)
         .trim()
@@ -45,27 +53,33 @@ export default class AteList extends Component {
     });
     this.setState({ filteredMeals: newMeals });
   };
+
   render() {
     return (
       <div className="AteList">
-        <SearchBar onChange={this.onSearchChange} />
-        <ul>
-          {this.state.filteredMeals.map(meal => (
-            <li key={meal.id}>
-              <AteListItem
-                id={meal.id}
-                restaurantName={meal.restaurant_name}
-                food={meal.food}
-                drink={meal.drink}
-                date={meal.date_went}
-                city={meal.city}
-                rating={meal.rating}
-                comments={meal.comments}
-                onDelete={this.onMealDeleted}
-              />
-            </li>
-          ))}
-        </ul>
+        <div className="AteListBanner">
+          <h1 className="AteListHeader">entries</h1>
+          <SearchBar onChange={this.onSearchChange} />
+        </div>
+        <Loader loaded={this.state.loaded}>
+          <ul>
+            {this.state.filteredMeals.map(meal => (
+              <li className="listItemContainer" key={meal.id}>
+                <AteListItem
+                  id={meal.id}
+                  restaurantName={meal.restaurant_name}
+                  food={meal.food}
+                  drink={meal.drink}
+                  date={meal.date_went}
+                  city={meal.city}
+                  rating={meal.rating}
+                  comments={meal.comments}
+                  onDelete={this.onMealDeleted}
+                />
+              </li>
+            ))}
+          </ul>
+        </Loader>
       </div>
     );
   }

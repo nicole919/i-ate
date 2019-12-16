@@ -1,39 +1,215 @@
 * {
   box-sizing: border-box;
 }
+body,
+html {
+  width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
 
 body {
-  font-family: "Open Sans", sans-serif;
+  display: flex;
+  padding-bottom: 50px;
+  background-image: url("https://static.tumblr.com/92f8d57ff20a3f6838a5624f01088e20/whfv9mu/49Npr3z6z/tumblr_static_qibkklp5z74sgsgwcocokc4k.gif");
+}
+
+.HomePage {
+  width: 100%;
+  font-family: "Happy Monkey", sans-serif;
   font-size: 20px;
   color: #444;
   text-align: center;
   line-height: 1.5;
 }
-
-nav,
-footer {
-  padding: 1% 0;
-  background-color: #aaa;
+.NavLink {
+  padding-right: 25px;
 }
-
 nav {
+  padding-right: 10px;
+  padding-top: 5px;
+  height: 40px;
+  font-size: 22px;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 10;
+  background-color: #efccd0;
+  text-align: right;
+  font-family: "Happy Monkey", sans-serif;
+  border-bottom: 1px #8a4a26 solid;
 }
 
-header {
-  padding: 12% 0;
+.header-title {
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: 0.15em;
+  animation: typing 2s steps(40, end), blink-caret 0.75s step-end infinite;
 }
 
-section {
+/*typing effect*/
+@keyframes typing {
+  from {
+    width: 0;
+    border-right: 0.15em solid pink;
+  }
+  to {
+    width: 100%;
+    border-right: 0;
+  }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: pink;
+  }
+}
+
+.sectionContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.first-section {
+  min-height: 200px;
+  width: 80%;
+  padding: 6% 0;
+  background-color: #fffcb7;
+}
+
+.second-section {
+  background-color: #f7bdff;
+  width: 80%;
   min-height: 200px;
   padding: 6% 0;
-  background-color: #bbb;
+  margin-top: 7px;
 }
 
-section:nth-child(even) {
-  background-color: #ddd;
+.third-section {
+  background-color: #b9ffde;
+  width: 80%;
+  min-height: 150px;
+  padding: 3% 0;
+  margin-top: 7px;
+}
+
+.header-title {
+  text-align: center;
+  margin-top: 65px;
+  font-size: 75px;
+}
+
+a {
+  color: #8a4a26;
+  text-decoration: none;
+}
+a:hover {
+  color: #8a4a26;
+  text-decoration: underline;
+}
+.where {
+  padding-left: 25px;
+}
+
+.heart {
+  width: 18px;
+}
+
+.footerText {
+  font-size: 10px;
+}
+footer {
+  padding-top: 10px;
+}
+
+/*iphone 5*/
+@media (min-width: 320px) and (max-width: 370px) {
+  nav {
+    padding-top: 8px;
+    font-size: 18px;
+  }
+  .sectionContainer {
+    font-size: 18px;
+  }
+  .third-section a {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 16px;
+  }
+}
+/*iphone X */
+@media (min-width: 375px) and (max-width: 414px) {
+  .third-section a {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 18px;
+  }
+}
+
+/*ipad*/
+@media (min-width: 768px) and (max-width: 1024px) {
+  .sectionContainer {
+    padding-top: 20px;
+    font-size: 25px;
+  }
+  .first-section {
+    min-height: 200px;
+    width: 70%;
+    padding: 6% 0;
+    background-color: #fffcb7;
+  }
+
+  .second-section {
+    background-color: #f7bdff;
+    width: 70%;
+    min-height: 200px;
+    padding: 6% 0;
+    margin-top: 7px;
+  }
+
+  .third-section {
+    background-color: #b9ffde;
+    width: 70%;
+    min-height: 150px;
+    padding: 3% 0;
+    margin-top: 7px;
+  }
+}
+
+/*laptop */
+@media (min-width: 1281px) {
+  .first-section {
+    min-height: 200px;
+    width: 60%;
+    padding: 6% 0;
+    background-color: #fffcb7;
+  }
+
+  .second-section {
+    background-color: #f7bdff;
+    width: 60%;
+    min-height: 200px;
+    padding: 6% 0;
+    margin-top: 7px;
+  }
+
+  .third-section {
+    background-color: #b9ffde;
+    width: 60%;
+    min-height: 150px;
+    padding: 3% 0;
+    margin-top: 7px;
+  }
 }

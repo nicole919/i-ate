@@ -4,7 +4,7 @@ import Nav from "../Nav/Nav";
 import AteList from "../AteList/AteList";
 import NewItemAteForm from "../NewAteItemForm/NewAteItemForm";
 import HomePage from "../HomePage/HomePage";
-
+import "./app.css";
 class App extends Component {
   render() {
     return (
