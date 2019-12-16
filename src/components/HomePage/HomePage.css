@@ -12,7 +12,7 @@ html {
 body {
   display: flex;
   padding-bottom: 50px;
-  background-image: url("https://static.tumblr.com/92f8d57ff20a3f6838a5624f01088e20/whfv9mu/49Npr3z6z/tumblr_static_qibkklp5z74sgsgwcocokc4k.gif");
+  background-image: url("../../background.gif");
 }
 
 .HomePage {
