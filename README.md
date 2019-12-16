@@ -28,3 +28,5 @@ Node, Express
 ## Demo
 
 [i.ate](https://i-ate.now.sh/)
+
+[i.ate server repo](https://github.com/nicole919/i-ate-server)
