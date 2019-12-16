@@ -43,13 +43,14 @@ nav {
 }
 
 .header-title {
-  overflow: hidden; /* Ensures the content is not revealed until the animation */
-  /* The typwriter cursor */
-  white-space: nowrap; /* Keeps the content on a single line */
-  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-  letter-spacing: 0.15em; /* Adjust as needed */
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: 0.15em;
   animation: typing 2s steps(40, end), blink-caret 0.75s step-end infinite;
 }
+
+/*typing effect*/
 @keyframes typing {
   from {
     width: 0;
@@ -120,6 +121,74 @@ a:hover {
   padding-left: 25px;
 }
 
+.heart {
+  width: 18px;
+}
+
+.footerText {
+  font-size: 10px;
+}
+footer {
+  padding-top: 10px;
+}
+
+/*iphone 5*/
+@media (min-width: 320px) and (max-width: 370px) {
+  nav {
+    padding-top: 8px;
+    font-size: 18px;
+  }
+  .sectionContainer {
+    font-size: 18px;
+  }
+  .third-section a {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 16px;
+  }
+}
+/*iphone X */
+@media (min-width: 375px) and (max-width: 414px) {
+  .third-section a {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 18px;
+  }
+}
+
+/*ipad*/
+@media (min-width: 768px) and (max-width: 1024px) {
+  .sectionContainer {
+    padding-top: 20px;
+    font-size: 25px;
+  }
+  .first-section {
+    min-height: 200px;
+    width: 70%;
+    padding: 6% 0;
+    background-color: #fffcb7;
+  }
+
+  .second-section {
+    background-color: #f7bdff;
+    width: 70%;
+    min-height: 200px;
+    padding: 6% 0;
+    margin-top: 7px;
+  }
+
+  .third-section {
+    background-color: #b9ffde;
+    width: 70%;
+    min-height: 150px;
+    padding: 3% 0;
+    margin-top: 7px;
+  }
+}
+
+/*laptop */
 @media (min-width: 1281px) {
   .first-section {
     min-height: 200px;

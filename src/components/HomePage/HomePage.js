@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { SpeechBubble } from "react-kawaii";
+import Heart from "../../heart.svg";
 import "./HomePage.css";
 
 export default class HomePage extends Component {
@@ -41,12 +42,16 @@ export default class HomePage extends Component {
           </section>
         </div>
         <footer>
-          <div
+          {/* <div
             class="fb-share-button"
             data-href="https://i-ate.nicolefafard.now.sh/"
             data-layout="button_count"
-          ></div>
-          <p>i.ate is currently in beta mode</p>
+          ></div> */}
+          <p className="footerText">i.ate is currently in beta mode</p>
+          <p>
+            Created with <img className="heart" src={Heart} alt="heart" /> by{" "}
+            <a href="https://nicole919.github.io/portfolio">Nicole</a>
+          </p>
         </footer>
       </div>
     );
