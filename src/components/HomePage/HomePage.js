@@ -9,9 +9,7 @@ export default class HomePage extends Component {
     return (
       <div className="HomePage">
         <header role="banner" className="i-ate-banner">
-          <div class="image">
-            <h1 className="header-title">i.ate</h1>
-          </div>
+          <h1 className="header-title">i.ate</h1>
         </header>
         <div className="sectionContainer">
           <section className="first-section">
@@ -42,11 +40,6 @@ export default class HomePage extends Component {
           </section>
         </div>
         <footer>
-          {/* <div
-            class="fb-share-button"
-            data-href="https://i-ate.nicolefafard.now.sh/"
-            data-layout="button_count"
-          ></div> */}
           <p className="footerText">i.ate is currently in beta mode</p>
           <p>
             Created with <img className="heart" src={Heart} alt="heart" /> by{" "}
