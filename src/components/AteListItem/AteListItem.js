@@ -31,7 +31,7 @@ export default class AteListItem extends Component {
     if (!this.props.city) {
       return null;
     } else {
-      return <span>in {this.props.city}</span>;
+      return <span>, in {this.props.city},</span>;
     }
   }
   renderComments() {
