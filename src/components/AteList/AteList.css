@@ -69,10 +69,10 @@ button:focus {
   left: 0;
   z-index: 9999;
 }
-@media (min-width: 1281px) {
+@media (min-width: 1024px) {
   .listItemContainer {
-    min-height: 100px;
-    width: 60%;
+    min-height: auto;
+    width: 50%;
     padding: 6% 0;
     font-size: 18px;
   }

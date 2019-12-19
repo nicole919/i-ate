@@ -9,8 +9,9 @@
 input:hover {
   border: 1.5px #dab4c9 solid;
 }
-@media (min-width: 1281px) {
+
+@media (min-width: 1024px) {
   .search-input {
-    width: 60%;
+    width: 50%;
   }
 }

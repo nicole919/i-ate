@@ -154,7 +154,7 @@ export default class NewItemAteForm extends Component {
                   name="drink"
                   type="text"
                   id="drink"
-                  placeholder="what did you drink?"
+                  placeholder="what did you drink? (optional)"
                   onChange={event => this.updateFormEntry(event)}
                 ></Input>
               </div>
@@ -164,7 +164,7 @@ export default class NewItemAteForm extends Component {
                   name="city"
                   type="text"
                   id="city"
-                  placeholder="where were you? (city)"
+                  placeholder="where were you? (city) / (optional)"
                   onChange={event => this.updateFormEntry(event)}
                 ></Input>
               </div>
@@ -189,7 +189,7 @@ export default class NewItemAteForm extends Component {
                   name="comments"
                   type="text"
                   id="comments"
-                  placeholder="additional thoughts"
+                  placeholder="additional thoughts (optional)"
                   onChange={event => this.updateFormEntry(event)}
                 ></Textarea>
               </div>

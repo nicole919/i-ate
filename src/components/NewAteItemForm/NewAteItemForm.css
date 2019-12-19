@@ -27,3 +27,9 @@
 .input:focus {
   opacity: 0.8;
 }
+
+@media (min-width: 1024px) {
+  .input {
+    width: 40vw;
+  }
+}

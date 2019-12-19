@@ -40,7 +40,9 @@ export default class HomePage extends Component {
           </section>
         </div>
         <footer>
-          <p className="footerText">i.ate is currently in beta mode</p>
+          <p className="footerText" title="sign up not yet available">
+            i.ate is currently in beta mode
+          </p>
           <p>
             Created with <img className="heart" src={Heart} alt="heart" /> by{" "}
             <a href="https://nicole919.github.io/portfolio">Nicole</a>

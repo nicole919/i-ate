@@ -189,7 +189,7 @@ footer {
 }
 
 /*laptop */
-@media (min-width: 1281px) {
+@media (min-width: 1024px) {
   .first-section {
     min-height: 200px;
     width: 60%;
@@ -211,5 +211,13 @@ footer {
     min-height: 150px;
     padding: 3% 0;
     margin-top: 7px;
+  }
+  h3 {
+    padding-left: 15%;
+    padding-right: 15%;
+  }
+  p {
+    padding-left: 15%;
+    padding-right: 15%;
   }
 }
