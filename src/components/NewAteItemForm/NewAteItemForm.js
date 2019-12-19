@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Textarea, Input } from "../Utils/Utils";
+import { Redirect } from "react-router-dom";
 import config from "../../config";
 import "./NewAteItemForm.css";
 
@@ -15,7 +16,8 @@ export default class NewItemAteForm extends Component {
     formValid: false,
     restaurantNameValid: false,
     foodValid: false,
-    validationMessage: null
+    validationMessage: null,
+    routeToiAte: false
   };
 
   goBack = () => {
@@ -81,9 +83,7 @@ export default class NewItemAteForm extends Component {
       rating: rating,
       comments: comments
     };
-
-    this.setState({ error: null });
-
+    this.setState({ routeToiAte: true });
     fetch(`${config.API_ENDPOINT}/meals`, {
       method: "POST",
       body: JSON.stringify(meal),
@@ -100,7 +100,6 @@ export default class NewItemAteForm extends Component {
         return res.json();
       })
       .then(data => {
-        this.goBack();
         this.context.addMeal(data);
       })
       .catch(error => {
@@ -110,6 +109,7 @@ export default class NewItemAteForm extends Component {
   render() {
     return (
       <>
+        {this.state.routeToiAte && <Redirect to="/AteList" />}
         <h1 className="NewAteItemFormHeader">new entry</h1>
         <div className="FormContainer">
           <form
