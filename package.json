@@ -10,7 +10,7 @@
     "react-kawaii": "^0.14.4",
     "react-loader": "^2.4.6",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.2.0"
+    "react-scripts": "5.0.1"
   },
   "scripts": {
     "predeploy": "npm run build",
